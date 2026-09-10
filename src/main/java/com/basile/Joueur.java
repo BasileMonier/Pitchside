@@ -1,4 +1,4 @@
-Public class Joueur {
+public class Joueur {
     private String nom;
     private int age;
     private Poste poste;
@@ -71,4 +71,10 @@ Public class Joueur {
     public int overall(){
         return (stat_technique + stat_physique + stat_mental) / 3;
     }
+}
+
+
+void main() {
+    Joueur joueur1 = new Joueur("Basile", 22, Joueur.Poste.DEFENSEUR, 72, 81, 80);
+    System.out.println(joueur1.overall());
 }
