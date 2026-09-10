@@ -19,7 +19,27 @@ Public class Joueur {
         GARDIEN, DEFENSEUR, MILIEU, ATTAQUANT
     }
 
+    public String getNom(){
+        return nom;
+    }
 
+    public int getAge(){
+        return age;
+    }
 
+    public Poste getPoste(){
+        return poste;
+    }
 
+    public int getStat_technique(){
+        return stat_technique;
+    }
+
+    public int getStat_physique() {
+        return stat_physique;
+    }
+
+    public int getStat_mental() {
+        return stat_mental;
+    }
 }
