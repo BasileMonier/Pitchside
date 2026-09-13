@@ -1,18 +1,20 @@
+import javax.swing.*;
+
 public class Joueur {
     private String nom;
     private int age;
     private Poste poste;
-    private int stat_technique;
-    private int stat_physique;
-    private int stat_mental;
+    private int technique;
+    private int physique;
+    private int mental;
 
-    public Joueur(String nom, int age, Poste poste, int stat_technique, int stat_physique, int stat_mental) {
+    public Joueur(String nom, int age, Poste poste, int technique, int physique, int mental) {
         this.nom = nom;
         this.age = age;
         this.poste = poste;
-        setStat_technique(stat_technique);
-        setStat_physique(stat_physique);
-        setStat_mental(stat_mental);
+        setTechnique(technique);
+        setPhysique(physique);
+        setMental(mental);
     }
 
     public enum Poste {
@@ -31,37 +33,37 @@ public class Joueur {
         return poste;
     }
 
-    public int getStat_technique(){
-        return stat_technique;
+    public int getTechnique(){
+        return technique;
     }
 
-    public int getStat_physique() {
-        return stat_physique;
+    public int getPhysique() {
+        return physique;
     }
 
-    public int getStat_mental() {
-        return stat_mental;
+    public int getMental() {
+        return mental;
     }
 
-    public void setStat_technique(int stat_technique) {
-        if (stat_technique < 0 || stat_technique > 100) {
+    public void setTechnique(int technique) {
+        if (technique < 0 || technique > 100) {
             throw new IllegalArgumentException("La valeur doit être comprise entre 0 et 100.");
         }
-        this.stat_technique = stat_technique;
+        this.technique = technique;
     }
 
-    public void setStat_physique(int stat_physique) {
-        if (stat_physique < 0 || stat_physique> 100) {
+    public void setPhysique(int physique) {
+        if (physique < 0 || physique> 100) {
             throw  new IllegalArgumentException("La valeur doit être comprise entre 0 et 100.");
         }
-        this.stat_physique = stat_physique;
+        this.physique = physique;
     }
 
-    public void setStat_mental(int stat_mental) {
-        if (stat_mental < 0 || stat_mental > 100) {
+    public void setMental(int mental) {
+        if (mental < 0 || mental > 100) {
             throw new IllegalArgumentException("la valeur doit être comprise entre 0 et 100.");
         }
-        this.stat_mental = stat_mental;
+        this.mental = mental;
     }
 
     public void setPoste(Poste poste) {
@@ -69,9 +71,51 @@ public class Joueur {
     }
 
     public int overall(){
-        return (stat_technique + stat_physique + stat_mental) / 3;
+        return (technique + physique + mental) / 3;
     }
 }
+
+public class Gardien extends Joueur {
+
+    public Gardien (String nom, int age, Poste.gardien, int technique, int physique, int mental, int reflexe, int plongeon) {
+        super(nom, age, gardien,  technique, physique, mental);
+        this.reflexe = reflexe;
+        this.plongeon = plongeon;
+    }
+}
+
+public class Defenseur extends Joueur{
+
+    public Defenseur (String nom, int age, int technique, int physique, int mental, int vitesse, int interception) {
+        super(nom, age, technique, physique, mental, vitesse, interception):
+        this.vitesse = vitesse;
+        this.interception = interception;
+    }
+}
+
+public class Milieu extends Joueur {
+
+    public Milieu (String nom, int age, int technique, int physique, int mental, int vitesse, int passe) {
+        super (nom, age, technique, physique, mental, vitesse, passe);
+        this.vitesse = vitesse;
+        this.passe = passe;
+    }
+}
+
+public class Attaquant extends Joueur{
+
+    public Attaquant(String nom, int age, int technique, int physique, int mental, int vitesse, int tir) {
+        super(nom, age, technique, physique, mental, vitesse, tir);
+        this.vitesse = vitesse;
+        this.tir = tir;
+    }
+}
+
+
+
+
+
+
 
 
 void main() {
@@ -84,3 +128,4 @@ void main() {
     Joueur joueur3 = new Joueur("Estevao", 19, Joueur.Poste.ATTAQUANT, 88, 80, 78 );
     System.out.println(joueur3.overall());
 }
+
