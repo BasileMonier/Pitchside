@@ -112,12 +112,6 @@ public class Attaquant extends Joueur{
 }
 
 
-
-
-
-
-
-
 void main() {
     Joueur joueur1 = new Joueur("Basile", 22, Joueur.Poste.DEFENSEUR, 72, 81, 80);
     System.out.println(joueur1.overall());
