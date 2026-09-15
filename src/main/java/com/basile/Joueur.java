@@ -77,8 +77,8 @@ public class Joueur {
 
 public class Gardien extends Joueur {
 
-    public Gardien (String nom, int age, Poste.gardien, int technique, int physique, int mental, int reflexe, int plongeon) {
-        super(nom, age, gardien,  technique, physique, mental);
+    public Gardien (String nom, int age, int technique, int physique, int mental, int reflexe, int plongeon) {
+        super(nom, age, technique, physique, mental);
         this.reflexe = reflexe;
         this.plongeon = plongeon;
     }
@@ -87,7 +87,7 @@ public class Gardien extends Joueur {
 public class Defenseur extends Joueur{
 
     public Defenseur (String nom, int age, int technique, int physique, int mental, int vitesse, int interception) {
-        super(nom, age, technique, physique, mental, vitesse, interception):
+        super(nom, age, technique, physique, mental, ):
         this.vitesse = vitesse;
         this.interception = interception;
     }
@@ -96,7 +96,7 @@ public class Defenseur extends Joueur{
 public class Milieu extends Joueur {
 
     public Milieu (String nom, int age, int technique, int physique, int mental, int vitesse, int passe) {
-        super (nom, age, technique, physique, mental, vitesse, passe);
+        super (nom, age, technique, physique, mental);
         this.vitesse = vitesse;
         this.passe = passe;
     }
@@ -105,7 +105,7 @@ public class Milieu extends Joueur {
 public class Attaquant extends Joueur{
 
     public Attaquant(String nom, int age, int technique, int physique, int mental, int vitesse, int tir) {
-        super(nom, age, technique, physique, mental, vitesse, tir);
+        super(nom, age, technique, physique, mental);
         this.vitesse = vitesse;
         this.tir = tir;
     }
