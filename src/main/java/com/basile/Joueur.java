@@ -1,5 +1,3 @@
-import javax.swing.*;
-
 public class Joueur {
     private String nom;
     private int age;
@@ -73,53 +71,5 @@ public class Joueur {
     public int overall(){
         return (technique + physique + mental) / 3;
     }
-}
-
-public class Gardien extends Joueur {
-
-    public Gardien (String nom, int age, int technique, int physique, int mental, int reflexe, int plongeon) {
-        super(nom, age, technique, physique, mental);
-        this.reflexe = reflexe;
-        this.plongeon = plongeon;
-    }
-}
-
-public class Defenseur extends Joueur{
-
-    public Defenseur (String nom, int age, int technique, int physique, int mental, int vitesse, int interception) {
-        super(nom, age, technique, physique, mental, ):
-        this.vitesse = vitesse;
-        this.interception = interception;
-    }
-}
-
-public class Milieu extends Joueur {
-
-    public Milieu (String nom, int age, int technique, int physique, int mental, int vitesse, int passe) {
-        super (nom, age, technique, physique, mental);
-        this.vitesse = vitesse;
-        this.passe = passe;
-    }
-}
-
-public class Attaquant extends Joueur{
-
-    public Attaquant(String nom, int age, int technique, int physique, int mental, int vitesse, int tir) {
-        super(nom, age, technique, physique, mental);
-        this.vitesse = vitesse;
-        this.tir = tir;
-    }
-}
-
-
-void main() {
-    Joueur joueur1 = new Joueur("Basile", 22, Joueur.Poste.DEFENSEUR, 72, 81, 80);
-    System.out.println(joueur1.overall());
-
-    Joueur joueur2 = new Joueur("Caicedo", 25, Joueur.Poste.MILIEU, 84, 87, 81);
-    System.out.println(joueur2.overall());
-
-    Joueur joueur3 = new Joueur("Estevao", 19, Joueur.Poste.ATTAQUANT, 88, 80, 78 );
-    System.out.println(joueur3.overall());
 }
 
