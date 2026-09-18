@@ -74,4 +74,3 @@ public class Joueur {
         return (technique + physique + mental) / 3;
     }
 }
-
